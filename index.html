@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style type="text/css">
+    .bg-cover {
+        background-image: linear-gradient(to bottom, rgba(86, 57, 141, 0.295) 100%,rgba(22, 40, 139, 0.9) 0%), url('Challenge\BellyButtonBiodiversity\57-579714_bacteria-blue.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+  </style>
+</head>
+
+<body>
+  <body style="background:linear-gradient(to bottom right, #4e4e9b 0%, #be8148 104%)"></body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron jumbotron bg-cover text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p><b>Use the interactive charts below to explore the dataset</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5><b>Test Subject ID No.:</b></h5>
+          <p><small>Select from the dropdown to update chart contents<br></small></p>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p><b><center>Above shows the top 10 bacteria cultures found by test subject, please note that some subjects had less than 10 cultures found.</center></b></p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <p><b><center>Above is the frequency in which the sample area was washed. Test subjects that had a lower frequency of washes provided a higher concentration of cultures.</center></b></p>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <p><b><center>The bubbles in the above represent unique bacteria cultures. The higher the volume of samples, the larger the bubbles.</center></b></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
